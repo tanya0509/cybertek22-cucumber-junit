@@ -1,5 +1,5 @@
 #this tag "all" will run all of them
-@regression @smoke
+
 Feature: Library app login feature
   User Story:
   As a user, I should be able to login with correct credentials to different accounts. And dashboard should be displayed.
@@ -7,9 +7,13 @@ Feature: Library app login feature
 
   # this is how we comment in feature file
 
-  @librarian @employee
-  Scenario:  Login as librarian
+
+  Background: Assuming user is non the login page
     Given user is on the login page
+    #we put the above line here because its repeating and delete it from all scenarios where it repeats .Scenario
+
+  @librarian
+  Scenario:  Login as librarian
     When  user enters librarian username
     And user enters librarian password
     Then user should see the dashboard
@@ -17,14 +21,12 @@ Feature: Library app login feature
 
    @student
     Scenario: Login as student
-    Given user is on the login page
-    When  user enters student username
+     When  user enters student username
     And user enters student password
     Then user should see the dashboard
 
-  @admin @employee
+  @wip
   Scenario: Login as admin
-    Given user is on the login page
     When  user enters admin username
     And user enters admin password
     Then user should see the dashboard

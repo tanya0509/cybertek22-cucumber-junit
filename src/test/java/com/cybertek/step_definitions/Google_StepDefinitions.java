@@ -35,4 +35,17 @@ String expectedInTitle = "apple";
 
         Assert.assertTrue(actualTitle.contains(expectedInTitle));
     }
+
+    @When("User searches for {string}")
+    public void userSearchesFor(String arg0) {
+        GoogleSearchPage googleSearchPage = new GoogleSearchPage();
+        googleSearchPage.searchBar.sendKeys(arg0 + Keys.ENTER);
+    }
+
+    @Then("User should see {string} in the title")
+    public void userShouldSeeInTheTitle(String arg0) {
+        String actualTitle = Driver.getDriver().getTitle();
+        String expectedInTitle = arg0;
+        Assert.assertTrue(actualTitle.contains(expectedInTitle));
+    }
 }
