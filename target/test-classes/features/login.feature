@@ -12,20 +12,20 @@ Feature: Library app login feature
     Given user is on the login page
     #we put the above line here because its repeating and delete it from all scenarios where it repeats .Scenario
 
-  @librarian
+
   Scenario:  Login as librarian
     When  user enters librarian username
     And user enters librarian password
     Then user should see the dashboard
 
 
-   @student
+
     Scenario: Login as student
      When  user enters student username
     And user enters student password
     Then user should see the dashboard
 
-  @wip
+
   Scenario: Login as admin
     When  user enters admin username
     And user enters admin password
