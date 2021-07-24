@@ -31,17 +31,27 @@ public class DataTables_StepDefinitions {
         //1 - Get the dropdown as a select object
         Select monthDropdown = new Select(dropDownPage.month);
 
+
+
+
         //2 - Get all the options from the dropdown and store inside of a List
        List<WebElement>  actualMonthsAsWebElements = monthDropdown.getOptions();
 
-       //3- Convert the actualMonths from List<WebElements> to List<String>
-        List<String> actualMonthsAsString = new ArrayList<>();
+       //this line does the same as the commented lines bellow
+       Assert.assertEquals(expectedList, BrowserUtils.getElementsText(actualMonthsAsWebElements));
 
-        for (WebElement each : actualMonthsAsWebElements) {
+ //      //3- Convert the actualMonths from List<WebElements> to List<String>
+//        List<String> actualMonthsAsString = new ArrayList<>();
+//
+//        for (WebElement each : actualMonthsAsWebElements) {
+//
+//            actualMonthsAsString.add(each.getText());
+//
+//        }
+//
+//        Assert.assertEquals(expectedList, actualMonthsAsString);
 
 
-
-        }
 
     }
 
