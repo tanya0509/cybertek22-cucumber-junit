@@ -10,7 +10,7 @@ public class Hooks {
 
     //will comment the hooks so they dont run every time
 
-    @Before (value = "@librarian", order = 1)
+    @Before (value = "@librarian", order = 1)//this is applied only to the scenario that has the @librarian tag
     public void setupLoginScenario(){
       //  System.out.println("login scenario");
     }
@@ -30,6 +30,7 @@ public class Hooks {
         //scenario.isFailed()
 
         if(scenario.isFailed()){
+            //downcast TakeScreenshot
             byte[] screenshot = ((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", scenario.getName());//accepts 3 arguments
         }

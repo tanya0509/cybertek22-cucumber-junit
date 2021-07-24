@@ -8,7 +8,7 @@ Feature: Library app login feature
   # this is how we comment in feature file
 
 
-  Background: Assuming user is non the login page
+  Background: Assuming user is on the login page
     Given user is on the login page
     #we put the above line here because its repeating and delete it from all scenarios where it repeats .Scenario
 

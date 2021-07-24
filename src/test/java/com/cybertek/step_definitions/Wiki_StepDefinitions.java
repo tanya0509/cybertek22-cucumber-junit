@@ -40,7 +40,7 @@ public class Wiki_StepDefinitions {
     @Then("User sees {string} is in the wiki title")
     public void userSeesIsInTheWikiTitle(String arg0) {
         String actualTitle = Driver.getDriver().getTitle();
-        String expectedTitle = arg0 + "- Wikipedia";
+        String expectedTitle = arg0 + " - Wikipedia";
 
         Assert.assertEquals(expectedTitle, actualTitle);
     }
